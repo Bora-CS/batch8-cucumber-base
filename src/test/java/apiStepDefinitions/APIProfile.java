@@ -26,8 +26,8 @@ public class APIProfile {
 		request.header("x-auth-token", token);
 	}
 
-	@When("[API] user calls the PUT request with education data with missing information")
-	public void api_usr_calls_the_put_resquest_with_education_data_with_missing_information(DataTable dataTable) {
+	@When("[API] user calls the PUT request with education data as request body")
+	public void api_usr_calls_the_put_resquest_with_education_data(DataTable dataTable) {
 		Map<String, String> education = dataTable.asMaps().get(0);
 		Education body = new Education(education.get("id"), education.get("school"), education.get("degree"),
 				education.get("fieldofstudy"), education.get("from"), education.get("current"), education.get("to"),
