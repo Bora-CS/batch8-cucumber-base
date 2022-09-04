@@ -20,8 +20,3 @@ Feature: BoraTech Login
       | muradil.erkin@boratechschool.com | Boratech   |
       | yadikaeryashengdmv@gmail.com     | yadang0306 |
 
-  @smoke @regression @api
-  Scenario: API Login
-    Given [API] user is logged in
-      | username                         | password |
-      | muradil.erkin@boratechschool.com | Boratech |
