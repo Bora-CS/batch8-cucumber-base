@@ -10,6 +10,7 @@ public class DriverFactory {
 	private static WebDriver driver = null;
 	private static final String BASE_DRIVER_PATH = "src/test/resources/drivers/";
 	private static final String CHROMEDRIVER_MAC = BASE_DRIVER_PATH + "chromedriver_mac_m1";
+	private static final String CHROMEDRIVER_MAC_LI = BASE_DRIVER_PATH + "chromedriver_mac";
 	private static final String CHROMEDRIVER_WINDOWS = BASE_DRIVER_PATH + "chromedriver_windows.exe";
 
 	private DriverFactory() {
