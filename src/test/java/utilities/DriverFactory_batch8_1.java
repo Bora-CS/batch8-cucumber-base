@@ -33,7 +33,7 @@ public class DriverFactory_batch8_1 {
 	}
 	
 	public static String getChromeDriverPath() {
-		String osName = System.getProperty("os.name");
+		String osName = System.getProperty("os.name").toLowerCase();
 		if(osName.contains("mac")){
 			return"src/test/resources/drivers/chromedriver_mac";
 	
