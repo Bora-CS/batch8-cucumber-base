@@ -15,15 +15,10 @@ Feature: Validate login functionality
 		
 	@smoke @test @ui
 	Scenario: user is NOT able to login
-
-		And I enter wrong credential
-				| test1@t.com	| wrongPassword |
-				| test2@t.com	| wrongPassword |
-				| test3@t.com	| wrongPassword |
-				| test4@t.com	| wrongPassword |
+		And I enter userName "batch8@gmail.com" and password "wrongPassword"
 		Then I am NOT able to login
 		
 		@smoke @ui
 	Scenario: user is NOT able to login
-		And I enter wrong credential
-				| test1@t.com	| wrongPassword |
+		And I enter userName "wrongEmail" and password "Test1234"
+		Then I am NOT able to login
