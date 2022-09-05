@@ -4,7 +4,7 @@ Feature: BoraTech Login
   @smoke @regression @ui
   Scenario: Login Happy Path
     Given user is on the boratech login page
-    When user enters username - "muradil.erkin@boratechschool.com" and password - "Boratech"
+    When user enters username - "zhichen20110128@gmail.com" and password - "Chen12345@"
     And user clicks on the login button
     Then user should be navigated to the "Dashboard" page
 
