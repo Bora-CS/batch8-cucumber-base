@@ -10,10 +10,10 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 
 @Suite
 @ExcludeEngines("cucumber")
-@SelectClasspathResource("practice1")
+@SelectClasspathResource("Practice1")
 @ConfigurationParameter(key=GLUE_PROPERTY_NAME,value="uiStepDefinitions")
 @ConfigurationParameter(key=FILTER_TAGS_PROPERTY_NAME,value="@smoke")
-@ConfigurationParameter(key=FILTER_TAGS_PROPERTY_NAME,value="pretty,html:target/practice1_report/report.html;")
+@ConfigurationParameter(key=PLUGIN_PROPERTY_NAME,value="pretty,html:target/Practice1_report/index.html;")
 //@ConfigurationParameter(key=ANSI_COLORS_DISABLED_PROPERTY_NAME,value="true")
 //@ConfigurationParameter(key=EXECUTION_DRY_RUN_PROPERTY_NAME,value="false")
 public class Practice1 {	
