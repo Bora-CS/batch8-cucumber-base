@@ -8,12 +8,12 @@ Feature: Validate login functionality
 	
 	
 	
-	@smoke @sanity @login
+	@smoke @sanity @login @ui
 	Scenario: user is able to login
-		And I enter userName "muradil.erkin@boratechschool.com" and password "Boratech"
+		And I enter userName "batch8@gmail.com" and password "Test1234"
 		Then I am succefully logined
 		
-	@smoke @test
+	@smoke @test @ui
 	Scenario: user is NOT able to login
 
 		And I enter wrong credential
@@ -23,7 +23,7 @@ Feature: Validate login functionality
 				| test4@t.com	| wrongPassword |
 		Then I am NOT able to login
 		
-		@smoke
+		@smoke @ui
 	Scenario: user is NOT able to login
 		And I enter wrong credential
 				| test1@t.com	| wrongPassword |
