@@ -19,9 +19,8 @@ public class Practice1 {
 
 	@Given("user is on the boratech login page")
 	public void navigateToLoginPage() {
-		driver.get("https://boratech.herokuapp.com/login");
-		String titleText = driver.findElement(By.cssSelector(".large.text-primary")).getText();
-		assertEquals("Sign In", titleText);
+		driver.get("https://boratech.herokuapp.com");
+		
 	}
 
 	@When("user enters username - {string} and password - {string}")

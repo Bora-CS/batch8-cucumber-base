@@ -17,6 +17,7 @@ Scenario: user is NOTable to login
     And I enter wrong credentila
     |userName|password|
     |test@t.com|wrongPassword|
+    
     Then I am NOT able to login
     
 @smoke

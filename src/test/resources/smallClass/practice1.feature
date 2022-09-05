@@ -1,6 +1,6 @@
 Feature: Validate loging Functionality
 
-  @smoke 
+  @smoke @p
   Scenario: User is able to login
     Given user is on the boratech login page
     When user enter username - "niex6666@gmail.com" and password - "7918asd"
