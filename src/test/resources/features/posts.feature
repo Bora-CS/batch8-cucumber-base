@@ -13,3 +13,8 @@ Feature: Posts
       | Cucumber automation is a lot more than you think |
     And user submits the post
     Then user should see the success alert
+# 用同一个annotation的话。 名字在feature 里必须是一样的	,但是在step file 里面就跳过，不用写步骤了。
+#Then user should be navigated to the "Posts" page
+  #Then user should be navigated to the "Dashboard" page 
+
+ 
