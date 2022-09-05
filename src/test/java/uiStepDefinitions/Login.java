@@ -1,19 +1,15 @@
 package uiStepDefinitions;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.*;
 import io.cucumber.java.en.*;
 import utilities.DriverFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.time.Duration;
 import java.util.Map;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Login {
 
@@ -39,12 +35,12 @@ public class Login {
 	}
 
 	@Given("user is logged in")
-	public void user_is_logged_in(DataTable dataTable) {
+	public void user_is_logged_in(DataTable dataTable) throws InterruptedException {
 		Map<String, String> credentials = dataTable.asMaps().get(0);
 		driver.get("https://boratech.herokuapp.com/login");
 		driver.findElement(By.xpath("//input[@name='email']")).sendKeys(credentials.get("username"));
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(credentials.get("password"));
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		Thread.sleep(2000);
 	}
-
 }

@@ -1,11 +1,12 @@
-  @addEducation
+
+@addEducation
 Feature: Add Education
 
-  @test1
+  @smoke @regression @ui
   Scenario: Adding education
     Given user is logged in
-      | username                | password    |
-      | henghuang1234@gmail.com | Hunter8090? |
+      | username                     | password   |
+      | yadikaeryashengdmv@gmail.com | yadang0306 |
     Then user should be navigated to the "Dashboard" page
     When user clicks the "Add Education" button
     Then user should be navigated to the "Add Your Education" page
