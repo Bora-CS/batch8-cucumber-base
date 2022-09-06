@@ -16,14 +16,18 @@ public class Main {
 	public void teardown() {
 		DriverFactory.cleanup();
 	}
-	@Before("@ui_batch8_1 or @UI_")
-	public void prepare_batch8_1() {
-		DriverFactory_batch8_1.setUpDriver();
-		
-	}
 
-	@After
+	
+	
+	@Before("@ui_batch8_1 or @UI_batch8_1")
+	public void prepare_batch8_1(){
+		DriverFactory_batch8_1.setUpDriver();
+	}
+	
+	@After("@ui_batch8_1 or @UI_batch8_1")
 	public void endTest_batch8_1() {
 		DriverFactory_batch8_1.cleanUpDriver();
 	}
+	
 }
+	
