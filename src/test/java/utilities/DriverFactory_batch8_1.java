@@ -11,6 +11,11 @@ public class DriverFactory_batch8_1 {
 	private static final String chromeDriver_MAC = "src/test/resources/drivers/chromedriver_mac";
 	private static final String chromeDriver_WINDOWS = "src/test/resources/drivers/chromedriver_windows.exe";
 
+	private DriverFactory_batch8_1() {
+		
+	}
+	
+	
 	public static WebDriver setUpDriver() {
 		if (driver == null) {
 			System.setProperty("webdriver.chrome.driver", getChromeDriverPath());

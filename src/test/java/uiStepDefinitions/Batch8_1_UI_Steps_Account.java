@@ -17,9 +17,12 @@ public class Batch8_1_UI_Steps_Account {
 	
 
 	@Then("Validate the expirence in the UI")
-	public void validate_the_expirence_in_the_ui() {
+	public void validate_the_expirence_in_the_ui() throws InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    driver.navigate().refresh();
+	    
+	    Thread.sleep(5000);
+	    
 	}
 	
 	@Then("I add a education")
