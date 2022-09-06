@@ -13,6 +13,15 @@ public class Batch8_1_UI_Steps_Account {
 	
 	WebDriver driver = DriverFactory_batch8_1.setUpDriver();
 	
+	
+	
+
+	@Then("Validate the expirence in the UI")
+	public void validate_the_expirence_in_the_ui() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	
 	@Then("I add a education")
 	public void i_add_a_education(io.cucumber.datatable.DataTable dataTable) {
 	    // Write code here that turns the phrase above into concrete actions
