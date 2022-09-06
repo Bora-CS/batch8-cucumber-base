@@ -10,7 +10,6 @@ public class DriverFactory_batch8_1 {
 	private static WebDriver driver;
 	private static final String chromeDriver_MAC = "src/test/resources/drivers/chromedriver_mac";
 	private static final String chromeDriver_WINDOWS = "src/test/resources/drivers/chromedriver_windows.exe";
-	
 
 	public static WebDriver setUpDriver() {
 		if (driver == null) {
@@ -22,26 +21,25 @@ public class DriverFactory_batch8_1 {
 	}
 
 	public static void cleanUpDriver() {
-
-		driver.quit();
-		driver = null;
+		if (driver != null) {
+			driver.quit();
+			driver = null;
+		}
 	}
-	
+
 	public static String getChromeDriverPath() {
-		
-		String osName = System.getProperty("os.name");
-		if(osName.contains("mac")) {
-			System.out.println("My OS Name is: "+osName);
+
+		String osName = System.getProperty("os.name").toLowerCase();
+		if (osName.contains("mac")) {
+			System.out.println("My OS Name is: " + osName);
 			return chromeDriver_MAC;
-		}else if(osName.contains("window")) {
+		} else if (osName.contains("window")) {
 			return chromeDriver_WINDOWS;
-		}else {
+		} else {
 			System.out.println("We do NOT support your system!");
 			return null;
 		}
-	
-	}
 
-	
+	}
 
 }
