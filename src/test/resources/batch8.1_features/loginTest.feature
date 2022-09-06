@@ -8,37 +8,43 @@ Feature: Validate login functionality
 	
 	
 	
-	@smoke @sanity @login @ui
+	@smoke @sanity @login @ui_batch8_1
 	Scenario: user is able to login
-<<<<<<< HEAD
-		And I enter userName "shuqin3232331@gmail.com" and password "Tony3232331!"
-		Then I am succefully logined
-		
-#	@smoke @test
-#	Scenario: user is NOT able to login
-#
-#		And I enter wrong credential
-#				| test1@t.com	| wrongPassword |
-#				| test2@t.com	| wrongPassword |
-#				| test3@t.com	| wrongPassword |
-#				| test4@t.com	| wrongPassword |
-#		Then I am NOT able to login
-#		
-#		@smoke
-#	Scenario: user is NOT able to login
-#		And I enter wrong credential
-#				| test1@t.com	| wrongPassword |
-=======
 		And I enter userName "batch8@gmail.com" and password "Test1234"
 		Then I am succefully logined
 		
-	@smoke @test @ui
+	@smoke @test @ui_batch8_1
 	Scenario: user is NOT able to login
 		And I enter userName "batch8@gmail.com" and password "wrongPassword"
 		Then I am NOT able to login
 		
-		@smoke @ui
+		@smoke @ui_batch8_1
 	Scenario: user is NOT able to login
 		And I enter userName "wrongEmail" and password "Test1234"
 		Then I am NOT able to login
->>>>>>> batch8.1_Master
+		
+		@sanity @ui_batch8_1
+	Scenario: Add Education for a user
+		And I enter userName "batch8@gmail.com" and password "Test1234"
+		And I add a education 
+			|school|degree|field|from      |to        |Description                   |
+			|Bora	 |No    |CS   |01/01/2021|01/01/2022|I don't want to write anything|
+		Then I verify the education is been added
+		
+		@wip @ui_batch8_1
+	Scenario: Add Experence for a user
+		And I enter userName "batch8@gmail.com" and password "Test1234"
+		And [API] I signIn by API by userName "batch8@gmail.com" and password "Test1234"
+		Then [API] Add a experence for the user
+			|company|title|location|from      |to        |current |description                   |
+			|Bora	  |SDET |VA      |01/01/2021|01/01/2022|false   |I don't want to write anything|
+		Then Validate the expirence in the UI
+		
+		
+		
+		
+		
+		
+		
+		
+		
