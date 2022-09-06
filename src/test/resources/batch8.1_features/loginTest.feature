@@ -23,3 +23,27 @@ Feature: Validate login functionality
 	Scenario: user is NOT able to login
 		And I enter userName "wrongEmail" and password "Test1234"
 		Then I am NOT able to login
+		
+		@sanity
+	Scenario: Add Education for a user
+		And I enter userName "batch8@gmail.com" and password "Test1234"
+		And I add a education 
+			|school|degree|field|from      |to        |Description                   |
+			|Bora	 |No    |CS   |01/01/2021|01/01/2022|I don't want to write anything|
+		Then I verify the education is been added
+		
+		@wip
+	Scenario: Add Experence for a user
+		And I enter userName "batch8@gmail.com" and password "Test1234"
+		And [API] I signIn by API by userName "batch8@gmail.com" and password "Test1234"
+		Then [API] Add a experence for the user
+		Then Validate the expirence in the UI
+		
+		
+		
+		
+		
+		
+		
+		
+		
