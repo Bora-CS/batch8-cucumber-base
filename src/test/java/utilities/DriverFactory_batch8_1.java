@@ -22,9 +22,10 @@ public class DriverFactory_batch8_1 {
 	}
 
 	public static void cleanUpDriver() {
-
+		if(driver!= null) {
 		driver.quit();
 		driver = null;
+		}
 	}
 	
 	public static String getChromeDriverPath() {

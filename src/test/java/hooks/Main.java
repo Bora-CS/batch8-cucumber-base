@@ -3,6 +3,7 @@ package hooks;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import utilities.DriverFactory;
+import utilities.DriverFactory_batch8_1;
 
 public class Main {
 
@@ -15,5 +16,14 @@ public class Main {
 	public void teardown() {
 		DriverFactory.cleanup();
 	}
-	
+	@Before("@ui_batch8_1 or @UI_")
+	public void prepare_batch8_1() {
+		DriverFactory_batch8_1.setUpDriver();
+		
+	}
+
+	@After
+	public void endTest_batch8_1() {
+		DriverFactory_batch8_1.cleanUpDriver();
+	}
 }
