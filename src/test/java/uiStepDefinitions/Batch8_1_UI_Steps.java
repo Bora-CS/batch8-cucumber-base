@@ -32,8 +32,7 @@ public class Batch8_1_UI_Steps{
 		wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Login")));
 
 		driver.findElement(By.linkText("Login")).click();
-		
-		driver = DriverFactory_batch8_1.setUpDriver();
+
 	}
 
 	@Then("Login page is displayed")
