@@ -24,5 +24,5 @@ public class APIStepDefinitions {
 		String token = BoraAPI.login(credential.get("username"), credential.get("password"));
 		System.out.println("Token: " + token);
 	}
-
+	
 }
