@@ -1,5 +1,6 @@
 package uiStepDefinitions;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Transpose;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pojo.Education;
 import pojo.Experience;
 import utilities.DriverFactory;
 
@@ -42,19 +44,35 @@ public class Profile {
 		}
 	}
 
-	@Then("user adds an education")
-	public void user_updates_add_education(DataTable dataTable) {
-		Map<String, String> education = dataTable.asMaps().get(0);
-		driver.findElement(By.name("school")).sendKeys(education.get("school"));
-		driver.findElement(By.name("degree")).sendKeys(education.get("degree"));
-		driver.findElement(By.name("fieldofstudy")).sendKeys(education.get("fieldofstudy"));
-		driver.findElement(By.name("from")).sendKeys(education.get("from date"));
-		if (!education.get("current").equals(null)) {
-			driver.findElement(By.name("current")).click();
-		} else {
-			driver.findElement(By.name("to")).sendKeys(education.get("to"));
+	@When("user adds an education")
+	public void user_updates_add_education(List<Education> educations) {
+		for (Education education : educations) {
+			driver.findElement(By.name("_id")).sendKeys(education._id);
+			driver.findElement(By.name("school")).sendKeys(education.school);
+			driver.findElement(By.name("degree")).sendKeys(education.degree);
+			driver.findElement(By.name("fieldofstudy")).sendKeys(education.fieldofstudy);
+			driver.findElement(By.name("from")).sendKeys(education.from);
+
+			driver.findElement(By.tagName("textarea")).sendKeys(education.description);
+			driver.findElement(By.xpath("//input[@type='submit']")).click();
 		}
-		driver.findElement(By.tagName("textarea")).sendKeys(education.get("description"));
-		driver.findElement(By.xpath("//input[@type='submit']")).click();
 	}
 }
+
+//		
+//		
+//		
+//		Map<String, String> education = dataTable.asMaps().get(0);
+//		driver.findElement(By.name("school")).sendKeys(education.get("school"));
+//		driver.findElement(By.name("degree")).sendKeys(education.get("degree"));
+//		driver.findElement(By.name("fieldofstudy")).sendKeys(education.get("fieldofstudy"));
+//		driver.findElement(By.name("from")).sendKeys(education.get("from date"));
+//		if (!education.get("current").equals(null)) {
+//			driver.findElement(By.name("current")).click();
+//		} else {
+//			driver.findElement(By.name("to")).sendKeys(education.get("to"));
+//		}
+//		driver.findElement(By.tagName("textarea")).sendKeys(education.get("description"));
+//		driver.findElement(By.xpath("//input[@type='submit']")).click();
+//	}
+//}

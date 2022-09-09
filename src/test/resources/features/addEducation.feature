@@ -10,8 +10,8 @@ Feature: Add Education
     When user clicks the "Add Education" button
     Then user should be navigated to the "Add Your Education" page
     When user adds an education
-      | school   | degree                 | fieldofstudy    | from date  | current | to | description  |
-      | BoraTech | Test automation degree | Test Automation | 05/07/2022 | true    |    | This is fun! |
+      | _id | school   | degree                 | fieldofstudy    | from       | to        | description  |
+      | 001 | BoraTech | Test automation degree | Test Automation | 05/07/2022 | 11/7/2022 | This is fun! |
     Then user should see the success alert
 
   @smoke @regression @api

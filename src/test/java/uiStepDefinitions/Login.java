@@ -29,12 +29,8 @@ public class Login {
 	}
 
 	@When("user clicks on the login button")
-	public void user_clicks_on_the_login_button() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@type='submit']")).click();
-		Thread.sleep(2000);
-	}
+	public void user_clicks_on_the_login_button() throws InterruptedException {}
 
-	@Given("user is logged in")
 	public void user_is_logged_in(DataTable dataTable) throws InterruptedException {
 		Map<String, String> credentials = dataTable.asMaps().get(0);
 		driver.get("https://boratech.herokuapp.com/login");
