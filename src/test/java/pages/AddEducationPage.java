@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import pojo.Education;
+
 public class AddEducationPage {
 
 	// local Variables
@@ -39,19 +41,19 @@ public class AddEducationPage {
 	}
 
 	// Actions
-	public void addEducation(String school, String degree, String fieldofstudy, String from, boolean current, String to,
-			String description) {
-		nameOfSchoolField.sendKeys(school);
-		degreeField.sendKeys(degree);
-		fieldofstudyField.sendKeys(fieldofstudy);
-		fromDateField.sendKeys(from);
+	public void addEducation(Education education) {
 
-		if (current == true) {
+		nameOfSchoolField.sendKeys(education.school);
+		degreeField.sendKeys(education.degree);
+		fieldofstudyField.sendKeys(education.fieldofstudy);
+		fromDateField.sendKeys(education.from);
+
+		if (education.current == true) {
 			currentCheckBox.click();
 		} else {
-			toDateField.sendKeys(to);
+			toDateField.sendKeys(education.to);
 		}
-		descriptionTextBox.sendKeys(description);
+		descriptionTextBox.sendKeys(education.description);
 		submitButton.click();
 
 	}

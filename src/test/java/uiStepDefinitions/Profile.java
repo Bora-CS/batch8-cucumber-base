@@ -54,8 +54,8 @@ public class Profile {
 	@Then("user adds an education")
 	public void user_updates_add_education(List<Education> educations) {
 		for (Education education : educations) {
-			pages.getAddEducationPage().addEducation(education.school, education.degree, education.fieldofstudy,
-					education.from, education.current, education.to, education.description);
+			pages.getAddEducationPage().addEducation(education);
+
 		}
 	}
 }
