@@ -2,7 +2,8 @@ package pages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.openqa.selenium.NoSuchElementException;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

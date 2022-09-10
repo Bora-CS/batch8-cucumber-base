@@ -12,6 +12,10 @@ public class PageManager {
 	private HomePage homePage;
 	private LoginPage loginPage;
 	private DashboardPage dashboardPage;
+
+	private NavBar navBar;
+	private PostsPage postsPage;
+	private CommonPage commonPage;
 	private AddEducationPage addEducationPage;
 
 	public static PageManager getInstance() {
@@ -19,6 +23,10 @@ public class PageManager {
 			pageManager = new PageManager(DriverFactory.getInstance());
 		}
 		return pageManager;
+	}
+
+	public static void cleanup() {
+		pageManager = null;
 	}
 
 	private PageManager(WebDriver driver) {
@@ -46,11 +54,32 @@ public class PageManager {
 		return this.dashboardPage;
 	}
 
+	public NavBar getNavBar() {
+		if (navBar == null) {
+			this.navBar = new NavBar(driver);
+		}
+		return this.navBar;
+	}
+
+	public PostsPage getPostsPage() {
+		if (postsPage == null) {
+			this.postsPage = new PostsPage(driver);
+		}
+		return this.postsPage;
+	}
+
+	public CommonPage getCommonPage() {
+		if (commonPage == null) {
+			this.commonPage = new CommonPage(driver);
+		}
+		return this.commonPage;
+
+	}
+
 	public AddEducationPage getAddEducationPage() {
 		if (addEducationPage == null) {
 			this.addEducationPage = new AddEducationPage(driver);
 		}
 		return this.addEducationPage;
-	}
 
 }

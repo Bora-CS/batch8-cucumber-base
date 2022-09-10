@@ -14,7 +14,7 @@ import utilities.PageManager;
 
 public class Common {
 
-	PageManager pages = PageManager.getInstance();
+	private PageManager pages = PageManager.getInstance();
 
 	@When("user clicks on the {string} navigation link")
 	public void user_clicks_on_the_navigation_link(String navigationLinkText) {
@@ -24,7 +24,6 @@ public class Common {
 	@Then("user should be navigated to the {string} page")
 	public void user_should_be_navigated_to_the_page(String pageTitle) {
 		pages.getDashboardPage().validatePageLoad();
-
 	}
 
 	@Then("user should see the success alert")
