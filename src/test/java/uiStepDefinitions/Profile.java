@@ -13,17 +13,31 @@ import io.cucumber.java.en.When;
 import pojo.Education;
 import pojo.Experience;
 import utilities.DriverFactory;
+import utilities.PageManager;
 
 public class Profile {
 
-	private WebDriver driver = DriverFactory.getInstance();
+	private PageManager pages = PageManager.getInstance();
 
-	@Then("^user clicks the (\"Add Experience\"|\"Add Education\") button$")
-	public void addEducationOrAddExperience(String target) throws InterruptedException {
-		System.out.println("==> target " + target);
-		driver.findElement(By.xpath("//*[contains(text(), " + target + ")]")).click();
-		System.out.println("==> Clicked on add experience button");
-		Thread.sleep(2000);
+//	@Then("^user clicks the (\"Add Experience\"|\"Add Education\") button$")
+//	public void addEducationOrAddExperience(String target)  {
+//		driver.findElement(By.xpath("//*[contains(text(), " + target + ")]")).click();
+//		Thread.sleep(2000);
+//	}
+	
+	@When("[POM] user clicks the {string} button")
+	public void pom_user_clicks_the_button(String addEducation ) {
+	    pages.getDashboardPage().clickAddedExperienceButton();
+	}
+	
+	@Then("[POM] user should be navigated to the Dashboard page")
+	public void pom_user_should_be_navigated_to_the_dashboard_page() {
+	    pages.getDashboardPage().validatePageLoad();
+	}
+
+	@Then("[POM] user should be navigated to the Add Education page")
+	public void pom_user_should_be_navigated_to_the_add_education_page() {
+	    pages.getAddEducationPage().validatePageLoad();
 	}
 
 	@When("user adds an experience")
@@ -46,17 +60,8 @@ public class Profile {
 	@Then("user adds an education")
 	public void user_updates_add_education(List<Education> educations) {
 		for (Education education : educations) {
-			driver.findElement(By.name("school")).sendKeys(education.school);
-			driver.findElement(By.name("degree")).sendKeys(education.degree);
-			driver.findElement(By.name("fieldofstudy")).sendKeys(education.fieldofstudy);
-			driver.findElement(By.name("from")).sendKeys(education.from);
-			if (education.current) {
-				driver.findElement(By.name("current")).click();
-			} else {
-				driver.findElement(By.name("to")).sendKeys(education.to);
-			}
-			driver.findElement(By.tagName("textarea")).sendKeys(education.description);
-			driver.findElement(By.xpath("//input[@type='submit']")).click();
+			pages.getAddEducationPage().addEducation(education.school, education.degree, education.fieldofstudy,
+					education.from, education.current, education.to, education.description);
 		}
 	}
 }

@@ -3,6 +3,7 @@ package uiStepDefinitions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import utilities.DriverFactory;
+import utilities.PageManager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Login {
 
-	private WebDriver driver = DriverFactory.getInstance();
+	PageManager pages = PageManager.getInstance();
 
 	@Given("user is on the boratech login page")
 	public void navigateToLoginPage() {
@@ -29,9 +30,9 @@ public class Login {
 	}
 
 	@When("user clicks on the login button")
-	public void user_clicks_on_the_login_button() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@type='submit']")).click();
-		Thread.sleep(2000);
+	public void user_clicks_on_the_login_button() {
+		pages.getHomePage().navigate();
+
 	}
 
 	@Given("user is logged in")

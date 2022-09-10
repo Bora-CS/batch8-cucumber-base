@@ -12,6 +12,7 @@ public class PageManager {
 	private HomePage homePage;
 	private LoginPage loginPage;
 	private DashboardPage dashboardPage;
+	private AddEducationPage addEducationPage;
 
 	public static PageManager getInstance() {
 		if (pageManager == null) {
@@ -43,6 +44,13 @@ public class PageManager {
 			this.dashboardPage = new DashboardPage(driver);
 		}
 		return this.dashboardPage;
+	}
+
+	public AddEducationPage getAddEducationPage() {
+		if (addEducationPage == null) {
+			this.addEducationPage = new AddEducationPage(driver);
+		}
+		return this.addEducationPage;
 	}
 
 }

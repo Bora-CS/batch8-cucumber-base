@@ -2,7 +2,10 @@ package pages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.swing.text.html.CSS;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +19,10 @@ public class DashboardPage {
 	// Elements
 	@FindBy(xpath = "//p[@class='lead']")
 	private WebElement subtitleText;
+	@FindBy(xpath = "//a[contains(text(), 'education')]")
+	private WebElement addEducationButton;
+	@FindBy(css = ".alert.alert-success")
+	private WebElement successAlert;
 
 	// Constructor
 	public DashboardPage(WebDriver driver) {
@@ -26,6 +33,18 @@ public class DashboardPage {
 	// Actions
 	public void validatePageLoad() {
 		assertTrue(subtitleText.getText().contains("Welcome"), "Sign In Failed, not on Dashboard Page");
+	}
+
+	public void clickAddedExperienceButton() {
+		addEducationButton.click();
+	}
+
+	public void successAlertMessageValidation() {
+		try {
+			assertTrue(successAlert.isDisplayed());
+		} catch (NoSuchElementException e) {
+			assertTrue(false, "The success alert was not found");
+		}
 	}
 
 }

@@ -10,10 +10,11 @@ import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utilities.DriverFactory;
+import utilities.PageManager;
 
 public class Common {
 
-	private WebDriver driver = DriverFactory.getInstance();
+	PageManager pages = PageManager.getInstance();
 
 	@When("user clicks on the {string} navigation link")
 	public void user_clicks_on_the_navigation_link(String navigationLinkText) {
@@ -22,8 +23,8 @@ public class Common {
 
 	@Then("user should be navigated to the {string} page")
 	public void user_should_be_navigated_to_the_page(String pageTitle) {
-		String titleText = driver.findElement(By.cssSelector(".large.text-primary")).getText();
-		assertEquals(pageTitle, titleText);
+		pages.getDashboardPage().validatePageLoad();
+
 	}
 
 	@Then("user should see the success alert")
