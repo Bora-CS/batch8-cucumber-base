@@ -19,25 +19,19 @@ public class Profile {
 
 	private PageManager pages = PageManager.getInstance();
 
-//	@Then("^user clicks the (\"Add Experience\"|\"Add Education\") button$")
-//	public void addEducationOrAddExperience(String target)  {
-//		driver.findElement(By.xpath("//*[contains(text(), " + target + ")]")).click();
-//		Thread.sleep(2000);
-//	}
-	
-	@When("[POM] user clicks the {string} button")
-	public void pom_user_clicks_the_button(String addEducation ) {
-	    pages.getDashboardPage().clickAddedExperienceButton();
-	}
-	
-	@Then("[POM] user should be navigated to the Dashboard page")
-	public void pom_user_should_be_navigated_to_the_dashboard_page() {
-	    pages.getDashboardPage().validatePageLoad();
+	@When("user clicks the {string} button")
+	public void user_clicks_the_button(String addEducation) {
+		pages.getDashboardPage().clickAddedExperienceButton();
 	}
 
-	@Then("[POM] user should be navigated to the Add Education page")
-	public void pom_user_should_be_navigated_to_the_add_education_page() {
-	    pages.getAddEducationPage().validatePageLoad();
+	@Then("user should be navigated to the Dashboard page")
+	public void user_should_be_navigated_to_the_dashboard_page() {
+		pages.getDashboardPage().validatePageLoad();
+	}
+
+	@Then("user should be navigated to the Add Education page")
+	public void user_should_be_navigated_to_the_add_education_page() {
+		pages.getAddEducationPage().validatePageLoad();
 	}
 
 	@When("user adds an experience")
