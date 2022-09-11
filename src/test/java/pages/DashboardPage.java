@@ -17,7 +17,7 @@ public class DashboardPage {
 	// Elements
 	@FindBy(xpath = "//p[@class='lead']")
 	private WebElement subtitleText;
-	@FindBy(xpath = "//a[contains(text(), 'education')]")
+	@FindBy(xpath = "//a[contains(text(), 'Education')]")
 	private WebElement addEducationButton;
 	@FindBy(css = ".alert.alert-success")
 	private WebElement successAlert;
