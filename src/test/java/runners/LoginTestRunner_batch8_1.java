@@ -11,10 +11,10 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("batch8.1_features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "uiStepDefinitions, apiStepDefinitions, hooks")
-@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@smoke")
+@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@wip")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, html:target/batch8-1_report/index.html")
 @ConfigurationParameter(key = ANSI_COLORS_DISABLED_PROPERTY_NAME, value = "true")
-@ConfigurationParameter(key = EXECUTION_DRY_RUN_PROPERTY_NAME, value = "false")
+@ConfigurationParameter(key = EXECUTION_DRY_RUN_PROPERTY_NAME, value = "true")
 public class LoginTestRunner_batch8_1 {
 
 }
