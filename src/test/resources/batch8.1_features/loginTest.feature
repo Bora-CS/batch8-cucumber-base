@@ -28,10 +28,10 @@ Feature: Validate login functionality
 		And I enter userName "batch8@gmail.com" and password "Test1234"
 		And I add a education 
 			|school|degree|field|from      |to        |Description                   |
-			|Bora	 |No    |CS   |01/01/2021|01/01/2022|I don't want to write anything|
+			|Bora	 |No    |CS   |01/01/2021|01/01/2022|I don't want to write anything|		
 		Then I verify the education is been added
 		
-		@wip @ui_batch8_1
+		@ui_batch8_1
 	Scenario: Add Experence for a user
 		And I enter userName "batch8@gmail.com" and password "Test1234"
 		And [API] I signIn by API by userName "batch8@gmail.com" and password "Test1234"
@@ -40,8 +40,14 @@ Feature: Validate login functionality
 			|Bora	  |SDET |VA      |01/01/2021|01/01/2022|false   |I don't want to write anything|
 		Then Validate the expirence in the UI
 		
-		
-		
+		@ui_batch8_1 @wip
+	Scenario: Add Expirence for a user
+		And I enter userName "batch8@gmail.com" and password "Test1234"
+		And I add an expirence
+			|company|title|location|from      |to        |current |description                   |
+			|Bora	  |SDET |VA      |01/01/2020|01/01/2022|false   |I don't want to write anything|
+		Then Validate the expirence in the UI
+
 		
 		
 		
