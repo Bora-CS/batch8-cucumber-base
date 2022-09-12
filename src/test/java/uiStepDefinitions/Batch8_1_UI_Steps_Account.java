@@ -6,12 +6,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Then;
+<<<<<<< HEAD
+=======
+import pojo.EducationData;
+import utilities.DriverFactory;
+>>>>>>> master
 import utilities.DriverFactory_batch8_1;
 
 public class Batch8_1_UI_Steps_Account {
 
 	
+<<<<<<< HEAD
 	WebDriver driver = DriverFactory_batch8_1.setUpDriver();
+=======
+	WebDriver driver = DriverFactory.setUpDriver();
+>>>>>>> master
 	
 	
 	
@@ -39,6 +48,13 @@ public class Batch8_1_UI_Steps_Account {
 		
 		Map<String,String> edu = dataTable.asMaps().get(0);
 		
+<<<<<<< HEAD
+=======
+		EducationData eduData = eduData.get(0);
+		//EducationData deuData = new EducationData(cucumberDataTable.get("school"),cucumberDataTable.get(edu)
+				//cucumberDataTable.get("from"),cucumberDataFrom()
+
+>>>>>>> master
 		driver.findElement(By.name("school")).sendKeys(edu.get("school"));
 		
 		driver.findElement(By.name("degree")).sendKeys(edu.get("degree"));
@@ -59,7 +75,11 @@ public class Batch8_1_UI_Steps_Account {
 	public void i_verify_the_education_is_been_added() {
 	    // Write code here that turns the phrase above into concrete actions
 	   
+<<<<<<< HEAD
 		DriverFactory_batch8_1.cleanUpDriver();
+=======
+		DriverFactory.cleanUpDriver();
+>>>>>>> master
 	}
 	
 	
