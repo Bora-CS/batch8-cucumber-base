@@ -1,22 +1,15 @@
 package uiStepDefinitions;
 
-import java.time.Duration;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.internal.common.assertion.Assertion;
 import pages.HomePage;
-import pages.Homepage;
 import pages.LoginPage;
 import utilities.DriverFactory_batch8_1;
 
@@ -47,7 +40,7 @@ public class Batch8_1_UI_Steps{
 
 	@Given("Click login button")
 	public void click_login_button() {
-		HomePage homePage = new HomePage();
+		HomePage homePage = new HomePage(driver);
 		
 		homePage.clickLoginBottion();
 	}

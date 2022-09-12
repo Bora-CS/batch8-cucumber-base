@@ -38,3 +38,4 @@ public class LoginPage {
 	public void clickLoginButton() {
 		driver.findElement(By.xpath("//input[@value='Login']")).click();
 }
+	}
