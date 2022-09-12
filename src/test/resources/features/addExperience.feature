@@ -4,8 +4,8 @@ Feature: Add Experience
   @smoke @regression @ui
   Scenario: Add a New Experience
     Given user is logged in
-      | username                         | password |
-      | muradil.erkin@boratechschool.com | Boratech |
+      | username           | password |
+      | niex6666@gmail.com | 7918asd  |
     Then user should be navigated to the "Dashboard" page
     Then user clicks the "Add Experience" button
     Then user should be navigated to the "Add An Experience" page

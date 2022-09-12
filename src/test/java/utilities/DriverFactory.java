@@ -49,4 +49,14 @@ public class DriverFactory {
 		}
 	}
 
+	public static WebDriver setUpDriver() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void cleanUpDriver() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -20,8 +20,8 @@ public class LoginTest {
 			driver.findElement(By.xpath("//a[text()='Login']")).click();
 
 			// LoginPage
-			driver.findElement(By.xpath("//input[@name='email']")).sendKeys("muradil.erkin@boratechschool.com");
-			driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Boratech");
+			driver.findElement(By.xpath("//input[@name='email']")).sendKeys("niex6666@gmail.com");
+			driver.findElement(By.xpath("//input[@name='password']")).sendKeys("7918asd");
 			driver.findElement(By.xpath("//input[@value='Login']")).click();
 			Thread.sleep(2000);
 
