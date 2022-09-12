@@ -10,14 +10,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.restassured.internal.common.assertion.Assertion;
+import pages.HomePage;
+import pages.Homepage;
+import pages.LoginPage;
 import utilities.DriverFactory_batch8_1;
 
 public class Batch8_1_UI_Steps{
 
 	WebDriver driver = DriverFactory_batch8_1.setUpDriver();
+	HomePage homePage = new HomePage(driver);
+	LoginPage login;
 
+	@Before
+	public void statTest() {
+		driver = DriverFactory_batch8_1.setUpDriver();
+		homePage = new HomePage(driver);
+		login = new LoginPage(driver);
+	}
+	@After
+	public void endTest() {
+		DriverFactory_batch8_1.cleanUpDriver();
+		
+	}
+	
 	@Given("I am on the homepage")
 	public void i_am_on_the_homepage() {
 
@@ -27,18 +47,16 @@ public class Batch8_1_UI_Steps{
 
 	@Given("Click login button")
 	public void click_login_button() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Login")));
-
-		driver.findElement(By.linkText("Login")).click();
-
+		HomePage homePage = new HomePage();
+		
+		homePage.clickLoginBottion();
 	}
 
 	@Then("Login page is displayed")
 	public void login_page_is_displayed() {
 
-		List<WebElement> elems = driver.findElements(By.xpath("//h1[text()='Sign In']"));
-		Assertions.assertTrue(elems.size() > 0, "We didn't land on the Login Page");
+		boolean isDisplay = login.verifyLoginPageDisplay();
+		Assertions.assertTrue(isDisplay, "We didn't land on the Login Page");
 
 	}
 
@@ -46,17 +64,22 @@ public class Batch8_1_UI_Steps{
 	public void i_enter_user_name_and_password(String username, String password) {
 		System.out.println("Username is: " + username + "\nPassword is: " + password);
 		
-		driver.findElement(By.name("email")).sendKeys(username);
-		driver.findElement(By.name("password")).sendKeys(password);
-		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		login.login(username,password);
+		login.enterEmailAddress(password);
+		login.clickLoginButton();
 		
 	}
 
 	@Then("I am succefully logined")
-	public void i_am_succefully_logined() {
+	public void i_am_succefully_logined() throws InterruptedException {
+		Thread.sleep(3000);
+		
+		boolean amIinlogin = login.verifyLoginPageDisplay();
+		
+		Assertions.assertFalse(amIinlogin,"I am still in the Login page");
 		
 		System.out.println("I am able to login");
-		DriverFactory_batch8_1.cleanUpDriver();
+		
 
 	}
 
