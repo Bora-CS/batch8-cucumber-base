@@ -3,9 +3,7 @@ package uiStepDefinitions;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -15,7 +13,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import utilities.DriverFactory_batch8_1;
 
-public class Batch8_1_UI_Steps {
+public class Batch8_1_UI_Steps{
 
 	WebDriver driver;
 	HomePage homePage;
