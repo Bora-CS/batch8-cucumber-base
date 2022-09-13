@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Then;
+import pages.PageManager;
 import pojo.EducationData;
 import pojo.ExpirencePojo;
 import utilities.DriverFactory_batch8_1;
@@ -15,7 +16,7 @@ public class Batch8_1_UI_Steps_Account {
 
 	
 	WebDriver driver = DriverFactory_batch8_1.setUpDriver();
-	
+	PageManager pages = new PageManager(driver);
 	
 	
 

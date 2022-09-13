@@ -10,6 +10,18 @@ import org.openqa.selenium.WebElement;
 public class LoginPage {
 
 	WebDriver driver;
+	//apgeName_Function/ElementType_shortDescription
+	private By headerText_singn= By.name("email");
+	private By headerEmailLink= By.name("email");
+	private By headerPassword= By.name("password");
+	private By headerLoginButton = By.xpath("//h1[text()='Sign In']");
+	 
+	
+	 
+	
+	
+	
+	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
