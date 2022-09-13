@@ -7,6 +7,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Then;
+import pages.AddEducationPage;
+import pages.DashboardPage;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.PageManager;
 import pojo.EducationData;
 import pojo.ExpirencePojo;
 import utilities.DriverFactory_batch8_1;
@@ -15,13 +20,15 @@ public class Batch8_1_UI_Steps_Account {
 
 	
 	WebDriver driver = DriverFactory_batch8_1.setUpDriver();
-	
+
+	PageManager pages = PageManager.getInstance();
 	
 	
 
 	@Then("Validate the expirence in the UI")
 	public void validate_the_expirence_in_the_ui() throws InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
+
 	    driver.navigate().refresh();
 	    
 	    Thread.sleep(5000);
@@ -38,8 +45,7 @@ public class Batch8_1_UI_Steps_Account {
 	    //
 	    // For other transformations you can register a DataTableType.
 	   
-		driver.findElement(By.xpath("//a[contains(@href,'education')]")).click();
-		
+		pages.getDashBoardPage().clickAddEducationLink();
 		
 		EducationData eduData = eduDatas.get(0);
 
