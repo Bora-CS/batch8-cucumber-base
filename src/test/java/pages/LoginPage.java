@@ -10,7 +10,16 @@ import org.openqa.selenium.WebElement;
 public class LoginPage {
 
 	
-	WebDriver driver;
+	private WebDriver driver;
+	
+	
+	// pageName _ Function/ElementType _ shortDescription
+	private By headerText_singIn = By.xpath("//h1[text()='Sign In']");
+	private By emailField = By.name("email");
+	private By passwordField = By.name("password");
+	private By loginButton = By.xpath("//input[@value='Login']");
+	
+	
 	
 	public LoginPage(WebDriver driver) {
 		
@@ -26,7 +35,7 @@ public class LoginPage {
 	}
 	
 	public boolean verifyLoginPageDisplay() {
-		List<WebElement> elems = driver.findElements(By.xpath("//h1[text()='Sign In']"));
+		List<WebElement> elems = driver.findElements(headerText_singIn);
 		
 		return elems.size()>0;
 	}
@@ -34,16 +43,16 @@ public class LoginPage {
 	
 	
 	public void enterEmailAddress(String email) {
-		driver.findElement(By.name("email")).sendKeys(email);
+		driver.findElement(emailField).sendKeys(email);
 	}
 	
 	public void enterPassword(String password) {
-		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(passwordField).sendKeys(password);
 
 	}
 	
 	public void clickLoginButton() {
-		driver.findElement(By.xpath("//input[@value='Login']")).click();
+		driver.findElement(loginButton).click();
 	}
 	
 	
