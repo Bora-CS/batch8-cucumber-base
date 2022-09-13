@@ -21,7 +21,7 @@ public class Profile {
 
 	@When("user clicks the {string} button")
 	public void user_clicks_the_button(String addEducation) {
-		pages.getDashboardPage().clickAddedExperienceButton();
+		pages.getDashboardPage().clickAddedEducationButton();
 	}
 
 	@Then("user should be navigated to the Dashboard page")
@@ -55,7 +55,6 @@ public class Profile {
 	public void user_updates_add_education(List<Education> educations) {
 		for (Education education : educations) {
 			pages.getAddEducationPage().addEducation(education);
-
 		}
 	}
 }

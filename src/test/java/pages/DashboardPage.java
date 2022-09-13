@@ -33,7 +33,7 @@ public class DashboardPage {
 		assertTrue(subtitleText.getText().contains("Welcome"), "Sign In Failed, not on Dashboard Page");
 	}
 
-	public void clickAddedExperienceButton() {
+	public void clickAddedEducationButton() {
 		addEducationButton.click();
 	}
 

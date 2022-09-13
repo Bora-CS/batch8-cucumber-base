@@ -23,9 +23,7 @@ public class Login {
 
 	@When("user clicks on the login button")
 	public void user_clicks_on_the_login_button() {
-
 		pages.getLoginPage().submitLogin();
-
 	}
 
 	@Given("user is logged in")
