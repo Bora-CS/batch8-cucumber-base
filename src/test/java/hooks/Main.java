@@ -11,7 +11,7 @@ public class Main {
 		DriverFactory.getInstance();
 	}
 
-	@After("@ui or @UI")
+	@After
 	public void teardown() {
 		DriverFactory.cleanup();
 	}
