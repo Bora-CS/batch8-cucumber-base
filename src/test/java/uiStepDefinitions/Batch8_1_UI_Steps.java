@@ -9,8 +9,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.HomePage;
-import pages.LoginPage;
+import pages2.HomePage;
+import pages2.LoginPage;
 import utilities.DriverFactory_batch8_1;
 
 public class Batch8_1_UI_Steps{

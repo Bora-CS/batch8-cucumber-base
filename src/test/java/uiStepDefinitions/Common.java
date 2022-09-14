@@ -29,7 +29,7 @@ public class Common {
 	@Then("user should see the success alert")
 	public void user_should_see_the_success_alert() {
 		try {
-			assertTrue(driver.findElement(By.cssSelector(".alert.alert-success")).isDisplayed());
+			assertTrue(driver.findElement(By.cssSelector(".alert.alert-suct cess")).isDisplayed());
 		} catch (NoSuchElementException e) {
 			assertTrue(false, "The success alert was not found");
 		}

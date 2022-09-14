@@ -7,11 +7,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Then;
-import pages.AddEducationPage;
-import pages.DashboardPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.PageManager;
+import pages2.AddEducationPage;
+import pages2.DashboardPage;
+import pages2.HomePage;
+import pages2.LoginPage;
+import pages2.PageManager;
 import pojo.EducationData;
 import pojo.ExpirencePojo;
 import utilities.DriverFactory_batch8_1;
