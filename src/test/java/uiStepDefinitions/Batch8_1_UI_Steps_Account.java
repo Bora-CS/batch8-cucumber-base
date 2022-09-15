@@ -39,8 +39,7 @@ public class Batch8_1_UI_Steps_Account {
 	    //
 	    // For other transformations you can register a DataTableType.
 	   
-		driver.findElement(By.xpath("//a[contains(@href,'education')]")).click();
-		
+		pages.getDashboradPage().clickAddEducationLink();
 		
 		EducationData eduData = eduDatas.get(0);
 

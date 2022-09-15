@@ -22,11 +22,12 @@ public class Batch8_1_UI_Steps{
 	@Before
 	public void statTest() {
 		driver = DriverFactory_batch8_1.setUpDriver();
-		homePage = new HomePage(driver);
+		
 		login = new LoginPage(driver);
 	}
 	@After
 	public void endTest() {
+		
 		DriverFactory_batch8_1.cleanUpDriver();
 		
 	}
@@ -40,7 +41,6 @@ public class Batch8_1_UI_Steps{
 
 	@Given("Click login button")
 	public void click_login_button() {
-		HomePage homePage = new HomePage(driver);
 		
 		homePage.clickLoginBottion();
 	}
@@ -57,9 +57,7 @@ public class Batch8_1_UI_Steps{
 	public void i_enter_user_name_and_password(String username, String password) {
 		System.out.println("Username is: " + username + "\nPassword is: " + password);
 		
-		login.login(username,password);
-		login.enterEmailAddress(password);
-		login.clickLoginButton();
+		login.login(username, password);
 		
 	}
 
