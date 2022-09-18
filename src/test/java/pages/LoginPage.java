@@ -1,5 +1,8 @@
 package pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,6 +51,35 @@ public class LoginPage {
 		this.navigate();
 		this.enterEmailAndPassword(email, password);
 		this.submitLogin();
+	}
+
+	// pageName _ Function/ElementType _ shortDescription
+	private By headerText_singIn = By.xpath("//h1[text()='Sign In']");
+	private By loginButton = By.xpath("//input[@value='Login']");
+
+	public void login(String userName, String password) {
+		enterEmailAddress(userName);
+		enterPassword(password);
+		clickLoginButton();
+	}
+
+	public boolean verifyLoginPageDisplay() {
+		List<WebElement> elems = driver.findElements(headerText_singIn);
+
+		return elems.size() > 0;
+	}
+
+	public void enterEmailAddress(String email) {
+		emailField.sendKeys(email);
+	}
+
+	public void enterPassword(String password) {
+		passwordField.sendKeys(password);
+
+	}
+
+	public void clickLoginButton() {
+		driver.findElement(loginButton).click();
 	}
 
 }

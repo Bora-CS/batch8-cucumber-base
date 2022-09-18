@@ -54,4 +54,5 @@ public class AddEducationPage {
 		submitButton.click();
 	}
 
+
 }
