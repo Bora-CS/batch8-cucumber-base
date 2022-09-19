@@ -15,6 +15,9 @@ public class PageManager {
 	private NavBar navBar;
 	private PostsPage postsPage;
 	private CommonPage commonPage;
+	private AddExperiencePage addExperiencePage;
+	private AddEducationPage addEducationPage;
+	private EditProfilePage editProfilePage;
 
 	public static PageManager getInstance() {
 		if (pageManager == null) {
@@ -71,6 +74,27 @@ public class PageManager {
 			this.commonPage = new CommonPage(driver);
 		}
 		return this.commonPage;
+	}
+
+	public AddExperiencePage getAddExperiencePage() {
+		if (addExperiencePage == null) {
+			this.addExperiencePage = new AddExperiencePage(driver);
+		}
+		return this.addExperiencePage;
+	}
+
+	public AddEducationPage getAddEducationPage() {
+		if (addEducationPage == null) {
+			this.addEducationPage = new AddEducationPage(driver);
+		}
+		return this.addEducationPage;
+	}
+	
+	public EditProfilePage getEditProfilePage() {
+		if (editProfilePage == null) {
+			this.editProfilePage = new EditProfilePage(driver);
+		}
+		return this.editProfilePage;
 	}
 
 }

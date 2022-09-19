@@ -17,7 +17,7 @@ public class Main {
 		PageManager.getInstance();
 	}
 
-	@After("@ui or @UI")
+	@After
 	public void teardown() {
 		DriverFactory.cleanup();
 		PageManager.cleanup();
