@@ -16,12 +16,12 @@ Feature: BoraTech Login
     Then user should be navigated to the "Dashboard" page
 
     Examples: 
-      | username                         | password   |
-      | muradil.erkin@boratechschool.com | Boratech   |
-      | yadikaeryashengdmv@gmail.com     | yadang0306 |
+      | username                     | password   |
+      | niex6666@gmail.com           | 7918asd    |
+      | yadikaeryashengdmv@gmail.com | yadang0306 |
 
   @smoke @regression @api
   Scenario: API Login
     Given [API] user is logged in
-      | email                            | password |
-      | muradil.erkin@boratechschool.com | Boratech |
+      | email              | password |
+      | niex6666@gmail.com | 7918asd  |

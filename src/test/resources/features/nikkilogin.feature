@@ -3,7 +3,7 @@ Feature: NikkiRegister
 
   @smoke @ui
   Scenario: Nikki login
-    Given nikki is on the lgon page
+    Given nikki is on the login page
     When nikki enter userName "niex6666@gmail.com" and password "7918asd"
     And nikki click on the login page
     Then nikki should be validate to the "Dashboard"
