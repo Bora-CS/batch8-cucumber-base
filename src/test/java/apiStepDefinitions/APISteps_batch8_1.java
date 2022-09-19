@@ -1,10 +1,13 @@
 package apiStepDefinitions;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -59,5 +62,54 @@ public class APISteps_batch8_1 {
 		experienceStatusCode = resp.getStatusCode();
 
 	}
+	@Given("[API] I signIn by API by userName {string} and passowrd {string}")
+	public void api_i_sign_in_by_api_by_user_name_and_passowrd(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@When("[API] user create or update the profile")
+	public void api_user_create_or_update_the_profile() {
+
+		
+		//1.Set up request
+		RestAssured.baseURI = "https://boratech.herokuapp.com/";
+		RequestSpecification request = RestAssured.given();
+		
+		//2.Set up header
+		request.header("Content-Type","application/json");
+		request.header("x-auth-token",token);
+		
+		//3.Set up boby
+//		Map<String,String> body = HashMap<String,String>();
+//		body.put("email", "niex6666@gmail.com");
+//		body.put("password", "7918asd");
+		List<List<String>> datas = table.asLists();
+		HashMap<String,String> bodyData = new HashMap<>();
+		
+		for(List<String> rowData : datas) {
+			bodyData.put(rowData.get(0), rowData.get(1));
+			
+			
+		}
+		
+		
+		for(List<Stirng>rowData : datas) {
+			
+			System.out.println("Each line of data is:" + );
+			
+		}
+		
+		//4.Do an API call
+		
+		
+		
+		
+	}
+	@Then("[API] Validete the prifle for the user")
+	public void api_validete_the_prifle_for_the_user() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
 
 }
