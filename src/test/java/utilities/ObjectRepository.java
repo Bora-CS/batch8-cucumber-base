@@ -1,7 +1,9 @@
 package utilities;
 
 import java.io.FileInputStream;
+import java.util.Map.Entry;
 import java.util.Properties;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 
@@ -15,6 +17,17 @@ public class ObjectRepository {
 			fis = new FileInputStream("src/test/resources/properties/ObjectRepository.properties");
 			props = new Properties();
 			props.load(fis);
+			
+//	Set<Entry<Object,Object>> entries = props.entrySet();
+//	for(Entry<Object,Object>entry : entries) {
+//		System.out.println("Key: " + entry.getKey() + "Value: " + entry.getValue());
+//	}
+//	Set<Object> keys = props.keySet();
+//	for(Object key : keys) {
+//		System.out.println("Key: " + key + "Value: " + props.get(key));
+//	}
+			
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
