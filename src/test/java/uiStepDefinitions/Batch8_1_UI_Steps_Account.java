@@ -58,7 +58,7 @@ public class Batch8_1_UI_Steps_Account {
 
 		driver.findElement(By.name("from")).sendKeys(eduData.from);
 
-		driver.findElement(By.name("to")).sendKeys(eduData.to);
+		driver.findElement(By.name("nukk")).sendKeys(eduData.to);
 
 		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys(eduData.description);
 

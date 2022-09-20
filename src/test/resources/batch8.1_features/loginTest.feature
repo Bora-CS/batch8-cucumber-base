@@ -23,7 +23,7 @@ Feature: Validate login functionality
 		And I enter userName "wrongEmail" and password "Test1234"
 		Then I am NOT able to login
 		
-		@sanity @ui_batch8_1
+		@sanity @ui_batch8_1 @debug
 	Scenario: Add Education for a user
 		And I enter userName "batch8@gmail.com" and password "Test1234"
 		And I add a education 
