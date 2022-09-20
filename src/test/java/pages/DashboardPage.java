@@ -1,8 +1,6 @@
 package pages;
 
 import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
 
-	
 	private WebDriver driver;
 	
 //	private By addExpirenceLink = By.xpath("//*[@href='/add-experience']");
@@ -32,8 +29,6 @@ public class DashboardPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	
 	// click on add Education
 	public void clickAddEducationLink() {
 		addEducationLink.click();
@@ -50,6 +45,5 @@ public class DashboardPage {
 //		List<WebElement> elems = driver.findElements(headerText);
 		return headerText.size()>0;
 	}
-	
 	
 }
